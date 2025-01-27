@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_trabajo_final_trabajo_final,trabajo_final.trabajo_final,model_trabajo_final_trabajo_final,base.group_user,1,1,1,1

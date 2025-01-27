@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <menuitem id="menu_trabajo_final_root"
+                  name="Trabajo Final"
+                  sequence="1"/>
+
+            <menuitem id="menu_team_template"
+                    name="Equipos Principales"
+                    parent="menu_trabajo_final_root"
+                    sequence="1"
+                    action="team_action_window"/>
+    </data>
+</odoo>

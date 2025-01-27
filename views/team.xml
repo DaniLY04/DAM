@@ -1,0 +1,50 @@
+<odoo>
+    <data>
+        <record id="team_tree" model="ir.ui.view">
+            <field name="name">trabajo_final.team.tree</field>
+            <field name="model">trabajo_final.team</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="president"/>
+                    <field name="country"/>
+                    <field name="image" widget="image" class="oe_avatar"/>
+                </tree>
+             </field>
+        </record>
+        <record id="team_form" model="ir.ui.view">
+            <field name="name">trabajo_final.team.form</field>
+            <field name="model">trabajo_final.team</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group name="group_top">
+                            <group name="group_rigth">
+                                <field name="image" widget="image"/>
+                            </group>
+                            <group name="group_left">
+                                    <field name="id_club"/>
+                                    <field name="name"/>
+                                    <field name="president"/>
+                                    <field name="country"/>
+                            </group>
+                        </group>
+                    </sheet>
+                </form>
+             </field>
+        </record>
+        <record model="ir.actions.act_window" id="team_action_window">
+            <field name="name">Equipos Principales</field>
+            <field name="res_model">trabajo_final.team</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Equipos Principales
+                </p>
+                <p>
+                    Click 'Crear' para añadir nuevos equipos principales.
+                </p>
+            </field>
+        </record>
+    </data>
+</odoo>
