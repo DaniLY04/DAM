@@ -1,4 +1,4 @@
-from odoo import models, fields, api, tools
+from odoo import models, fields
 
 
 class Team(models.Model):
@@ -12,4 +12,3 @@ class Team(models.Model):
     image = fields.Binary(string="Escudo : ")
 
     _sql_constraints = [('id_club_unique','UNIQUE(id_club)', 'El ID del club debe ser unico')]
-

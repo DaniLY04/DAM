@@ -1,6 +1,6 @@
 <odoo>
   <data>
-    <record id="trabajo_final_arbitro_tree" model="ir.ui.view">
+    <record id="trabajo_final_deporte_tree" model="ir.ui.view">
       <field name="name">trabajo_final.deporte.tree</field>
       <field name="model">trabajo_final.deporte</field>
       <field name="arch" type="xml">
@@ -11,7 +11,7 @@
       </field>
     </record>
 
-    <record id="trabajo_final_arbitro_form" model="ir.ui.view">
+    <record id="trabajo_final_deporte_form" model="ir.ui.view">
         <field name="name">trabajo_final.deporte.form</field>
         <field name="model">trabajo_final.deporte</field>
         <field name="arch" type="xml">
@@ -29,18 +29,18 @@
             </form>
         </field>
     </record>
-    <!--<record model="ir.actions.act_window" id="arbitro_action_window">
-      <field name="name">arbitro</field>
-      <field name="res_model">trabajo_final.arbitro</field>
+    <record model="ir.actions.act_window" id="deporte_action_window">
+      <field name="name">Deporte</field>
+      <field name="res_model">trabajo_final.deporte</field>
       <field name="view_mode">tree,form</field>
       <field name="help" type="html">
           <p class="oe_view_nocontent_create">
-              Ciudad
+              Deporte
           </p>
           <p>
-              Click 'Crear' para añadir nuevos elementos.
+              Click 'Crear' para añadir nuevos deportes.
           </p>
       </field>
-    </record>-->
+    </record>
   </data>
 </odoo>
