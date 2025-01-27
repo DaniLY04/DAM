@@ -12,8 +12,8 @@
     </record>
 
     <record id="trabajo_final_arbitro_form" model="ir.ui.view">
-        <field name="name">trabajo_final.arbitro.form</field>
-        <field name="model">trabajo_final.arbitro</field>
+        <field name="name">trabajo_final.deporte.form</field>
+        <field name="model">trabajo_final.deporte</field>
         <field name="arch" type="xml">
             <form>  
                 <sheet>
