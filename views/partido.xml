@@ -1,0 +1,76 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_partido_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.partido.tree</field>
+      <field name="model">trabajo_final.partido</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_partido"/>
+              <field name="fecha_hora"/>
+              <field name="equipo_local"/>
+              <field name="equipo_visitante"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_partido_form" model="ir.ui.view">
+        <field name="name">trabajo_final.partido.form</field>
+        <field name="model">trabajo_final.partido</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_partido"/>
+                        <field name="estado"/>                     
+                        <field name="equipo_local"/>
+                        <field name="goles_local"/>                        
+                        <field name="arbitro_principal"/>  
+                      </group>
+                      <group name="group_right">
+                        <field name="fecha_hora"/> 
+                        <field name="competicion"/>                         
+                        <field name="equipo_visitante"/>
+                        <field name="goles_visitante"/>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record id="view_pokemon_pokemon_kanban" model="ir.ui.view">
+        <field name="name">trabajo_final.partido.kanban</field>
+        <field name="model">trabajo_final.partido</field>
+        <field name="arch" type="xml">
+          <kanban>
+              <!--group>
+                  <kanban_group_by field="type1"/>
+              </group-->
+              <templates>
+                <t t-name="kanban-box">
+                  <div class= "mt-2">
+                    
+                  </div>
+                  <div class="mt-2">
+                  
+                  </div>
+                </t>
+              </templates>
+          </kanban>
+        </field>
+    </record>
+    <!--<record model="ir.actions.act_window" id="partido_action_window">
+      <field name="name">partido</field>
+      <field name="res_model">trabajo_final.partido</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Ciudad
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos elementos.
+          </p>
+      </field>
+    </record>-->
+  </data>
+</odoo>
