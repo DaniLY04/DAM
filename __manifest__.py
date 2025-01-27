@@ -25,8 +25,13 @@
     # always loaded
     'data': [
         # 'security/ir.model.access.csv',
-        'views/team.xml',
-        'views/menu.xml',        
+        #'views/views.xml',
+        #'views/templates.xml',
+        'views/competicion.xml',
+        'views/arbitro.xml',
+        'views/partido.xml',
+        'views/deporte.xml',
+        'views/menu.xml',
     ],
     # only loaded in demonstration mode
     'demo': [

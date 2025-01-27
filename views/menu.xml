@@ -1,13 +1,69 @@
 <odoo>
     <data>
-        <menuitem id="menu_trabajo_final_root"
-                  name="Trabajo Final"
-                  sequence="1"/>
+        <record model="ir.actions.act_window" id="arbitro_action_window">
+            <field name="name">Arbitro</field>
+            <field name="res_model">trabajo_final.arbitro</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Arbitro
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos arbitros.
+                </p>
+            </field>
+        </record>
 
-            <menuitem id="menu_team_template"
-                    name="Equipos Principales"
+        <record model="ir.actions.act_window" id="partido_action_window">
+            <field name="name">Partido</field>
+            <field name="res_model">trabajo_final.partido</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Partido
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos partidos.
+                </p>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="competicion_action_window">
+            <field name="name">Competicion</field>
+            <field name="res_model">trabajo_final.competicion</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Competicion
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevas competiciones.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_trabajo_final_root"
+                    name="Trabajo Final"
+                    sequence="1"/>
+            <menuitem id="menu_trabajo_final_template"
+                    name="Trabajo Final"
                     parent="menu_trabajo_final_root"
-                    sequence="1"
-                    action="team_action_window"/>
+                    sequence="1"/>
+                 <menuitem id="menu_arbitro"
+                        name="Arbitro"
+                        parent="menu_trabajo_final_template"
+                        sequence="1"
+                        action= "arbitro_action_window"/>
+
+                <menuitem id="menu_partido"
+                        name="Partido"
+                        parent="menu_trabajo_final_template"
+                        sequence="2"
+                        action= "partido_action_window"/>
+                <menuitem id="menu_competicion"
+                        name="Competicion"
+                        parent="menu_trabajo_final_template"
+                        sequence="2"
+                        action= "competicion_action_window"/>
     </data>
 </odoo>
