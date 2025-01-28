@@ -1,4 +1,4 @@
-from odoo import models, fields, api, tools
+from odoo import models, fields
 
 
 class Team(models.Model):
@@ -8,8 +8,5 @@ class Team(models.Model):
     name = fields.Char(string="Nombre : ", required=True)
     president = fields.Char(string="Presidente : " ,required=True)
     country = fields.Char(string="Pais : ", required=True)
-    id_club = fields.Char(string="ID Club : ", required=True)
+    id_club = fields.Char(string="ID Club : ", readonly=True, help="El ID del club se asigna automaticamente")
     image = fields.Binary(string="Escudo : ")
-
-    _sql_constraints = [('id_club_unique','UNIQUE(id_club)', 'El ID del club debe ser unico')]
-

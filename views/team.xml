@@ -8,7 +8,7 @@
                     <field name="name"/>
                     <field name="president"/>
                     <field name="country"/>
-                    <field name="image" widget="image" class="oe_avatar"/>
+                    <field name="image" widget="image" class="mi_imagen_tree"/>
                 </tree>
              </field>
         </record>

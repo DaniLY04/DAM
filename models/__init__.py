@@ -1,3 +1,1 @@
-# -*- coding: utf-8 -*-
-
-from . import models, arbitro, partido, competicion, deporte
+from . import models, partido, team, arbitro,  competicion, deporte

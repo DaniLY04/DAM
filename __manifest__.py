@@ -26,7 +26,7 @@
     'data': [
         # 'security/ir.model.access.csv',
         #'views/views.xml',
-        #'views/templates.xml',
+        'views/team.xml',
         'views/competicion.xml',
         'views/arbitro.xml',
         'views/partido.xml',
@@ -37,4 +37,12 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'assets': {
+        'web.assets_backend': [
+            'DAM/static/css/style.scss',
+        ],
+        'web.assets_frontend': [
+            'DAM/static/css/style.scss',
+        ],
+    },
 }
