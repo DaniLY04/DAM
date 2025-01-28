@@ -6,3 +6,4 @@ class deporte(models.Model):
 
     id_deporte = fields.Integer(string = "id", required="true")
     nombre = fields.Char(string="Nombre")
+    

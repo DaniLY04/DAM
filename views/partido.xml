@@ -22,7 +22,7 @@
                     <group name="group_top">
                       <group name="group_left">
                         <field name="id_partido"/>
-                        <field name="estado"/>                     
+                        <field name="estado" widget="radio"/>                     
                         <field name="equipo_local"/>
                         <field name="goles_local"/>                        
                         <field name="arbitro_principal"/>  
@@ -48,11 +48,10 @@
               </group-->
               <templates>
                 <t t-name="kanban-box">
-                  <div class= "mt-2">
-                    
-                  </div>
-                  <div class="mt-2">
-                  
+                  <div class= "mt-2" style="width: 1600px; height: 100px;">
+                    <field name="equipo_local" style="margin-right: 20px;"/>
+                    <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
+                    <field name="equipo_visitante"/>
                   </div>
                 </t>
               </templates>
