@@ -1,11 +1,18 @@
 <odoo>
-    <data>
-    <record id="increment_idclub_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_idclub_sequence</field>
-        <field name="prefix">CLUB-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
+    <data noupdate="1">
+        <record id="increment_idclub_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_idclub_sequence</field>
+            <field name="prefix">CLUB-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idplayer_sequence" model="ir.sequence">
+            <field name="name">ID Player Automatico</field>
+            <field name="code">increment_idplayer_sequence</field>
+            <field name="prefix">PLY-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
     </data>
 </odoo>

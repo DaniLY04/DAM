@@ -1,1 +1,1 @@
-from . import models, partido, team, arbitro,  competicion, deporte
+from . import models, partido, team, arbitro,  competicion, deporte, player
