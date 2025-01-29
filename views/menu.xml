@@ -65,6 +65,11 @@
                         parent="menu_trabajo_final_root"
                         sequence="1"
                         action= "team_action_window"/>
+                <menuitem id="menu_player"
+                        name="Jugador"
+                        parent="menu_trabajo_final_root"
+                        sequence="1"
+                        action= "player_action_window"/>
                 <!--<menuitem id="menu_division"
                         name="Division"
                         parent="menu_trabajo_final_root"
