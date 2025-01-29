@@ -19,7 +19,7 @@
                 <sheet>
                     <group name="group_top">
                       <group name="group_left">
-                        <field name="nombre"/>
+                        <field name="nombre" widget="oe_title"/>
                         <field name="pais"/>
                         <field name="categoria"/>
                       </group>

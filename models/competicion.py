@@ -4,7 +4,7 @@ class competicion(models.Model):
     _name = 'trabajo_final.competicion'
     _description = 'trabajo_final.competicion'
 
-    id_competicion = fields.Integer(string = "id", required="true")
+    id_competicion = fields.Char(string = "id",  default=lambda self: self.env['ir.sequence'].next_by_code('increment_idcompeticion_sequence'), readonly = True)
     nombre = fields.Char(string="Nombre")
     pais = fields.Char(string="Pais")
     deporte = fields.Char(string="Deporte")#fields.Many2one("trabajo_final.deporte", string="Deportes", required="true")
