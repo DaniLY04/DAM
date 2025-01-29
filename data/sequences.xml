@@ -1,45 +1,59 @@
 <odoo>
     <data noupdate="1">
-    <record id="increment_idclub_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_idclub_sequence</field>
-        <field name="prefix">CLUB-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-    <record id="increment_idcompeticion_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_idcompeticion_sequence</field>
-        <field name="prefix">COMP-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-    <record id="increment_iddeporte_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_iddeporte_sequence</field>
-        <field name="prefix">DEP-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-    <record id="increment_idpartido_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_idpartido_sequence</field>
-        <field name="prefix">PART-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-    <record id="increment_idarbitro_sequence" model="ir.sequence">
-        <field name="name">id automatico</field>
-        <field name="code">increment_idarbitro_sequence</field>
-        <field name="prefix">ARBI-</field>
-        <field name="padding">5</field>
-        <field name="company_id" eval="False"/>
-    </record>
-    <record id="increment_idplayer_sequence" model="ir.sequence">
+        <record id="increment_idclub_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_idclub_sequence</field>
+            <field name="prefix">CLUB-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idcompeticion_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_idcompeticion_sequence</field>
+            <field name="prefix">COMP-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_iddeporte_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_iddeporte_sequence</field>
+            <field name="prefix">DEP-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idpartido_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_idpartido_sequence</field>
+            <field name="prefix">PART-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idarbitro_sequence" model="ir.sequence">
+            <field name="name">id automatico</field>
+            <field name="code">increment_idarbitro_sequence</field>
+            <field name="prefix">ARBI-</field>
+            <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idplayer_sequence" model="ir.sequence">
             <field name="name">ID Player Automatico</field>
             <field name="code">increment_idplayer_sequence</field>
             <field name="prefix">PLY-</field>
             <field name="padding">5</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idstatus_sequence" model="ir.sequence">
+            <field name="name">ID Status Automatico</field>
+            <field name="code">increment_idstatus_sequence</field>
+            <field name="prefix">STA-</field>
+            <field name="padding">3</field>
+            <field name="company_id" eval="False"/>
+        </record>
+        <record id="increment_idposition_sequence" model="ir.sequence">
+            <field name="name">ID Posicion Automatico</field>
+            <field name="code">increment_idposition_sequence</field>
+            <field name="prefix">POS-</field>
+            <field name="padding">3</field>
             <field name="company_id" eval="False"/>
         </record>
     </data>

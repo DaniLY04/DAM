@@ -25,8 +25,10 @@
     # always loaded
     'data': [
         'data/sequences.xml',
-        # 'security/ir.model.access.csv',
-        #'views/views.xml',
+        #'security/ir.model.access.csv',
+        #'views/views.xml','
+        'views/status.xml',
+        'views/position.xml',        
         'views/player.xml',
         'views/team.xml',
         'views/competicion.xml',

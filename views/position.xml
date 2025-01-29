@@ -1,0 +1,44 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_position_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.position.tree</field>
+      <field name="model">trabajo_final.position</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_position"/>
+              <field name="name"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_position_form" model="ir.ui.view">
+        <field name="name">trabajo_final.position.form</field>
+        <field name="model">trabajo_final.position</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_position" widget="badge"/>
+                        <field name="name"/>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="position_action_window">
+      <field name="name">Posicion</field>
+      <field name="res_model">trabajo_final.position</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Posicion
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevas Posiciones.
+          </p>
+      </field>
+    </record>
+  </data>
+</odoo>
