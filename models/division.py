@@ -6,6 +6,10 @@ class Division(models.Model):
     _description = 'Categoria'
 
     name = fields.Char(string="Nombre : ", requiered=True)
-    id_division = fields.Integer(string="ID :" , required=True)
+    id_division = fields.Char(string="ID :" , required=True)
 
-    _sql_constraints = [('id_division_unique'),('UNIQUE(id_division)'),('El ID debe ser unico')]
+    @api.model
+    def create(self, vals):
+        if 'id_division' not in vals or not vals['id_division']:
+            vals['id_division'] = self.env['ir.sequence'].next_by_code('increment_idDivision_sequence')
+        return super(Division, self).create(vals)

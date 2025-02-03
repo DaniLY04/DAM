@@ -10,7 +10,6 @@
               <field name="last_name"/>
               <field name="gender"/>
               <field name="team_id"/>
-              <field name="status_id"/>
               <field name="position_id"/>
           </tree>
       </field>
@@ -29,7 +28,7 @@
                         <field name="last_name"/>
                         <field name="gender" widget="radio"/>
                         <field name="team_id"/>
-                        <field name="status_id"/>
+                        <field name="status_id" widget="many2many_tags"/>
                         <field name="position_id"/>
                       </group>
                       <group name="group_right">

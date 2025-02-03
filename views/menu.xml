@@ -76,12 +76,12 @@
                         action= "player_action_window"/>
 
                 <menuitem id="menu_status"
-                        name="Estado"
+                        name="Estatus"
                         parent="menu_trabajo_final_root"
                         sequence="1"
                         action= "status_action_window"/>
 
-                <menuitem id="menu_status"
+                <menuitem id="menu_position"
                         name="Posicion"
                         parent="menu_trabajo_final_root"
                         sequence="1"
