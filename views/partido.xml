@@ -48,15 +48,27 @@
               </group-->
               <templates>
                 <t t-name="kanban-box">
+                  <div>
+                    Competicion: <field name="competicion"/>
+                  </div>
                   <div class= "mt-2" style="width: auto; height: auto;">
                     <field name="equipo_local" style="margin-right: 20px;"/>
                     <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
                     <field name="equipo_visitante"/>
                     <div class="oe_kanban_team_imagen">
-                      
-                      <field name="imagen_local" widget="image" class="imagen_local"/>
-                      VS                     
-                      <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                      <div class="partido" t-if="record.estado == 'En curso' || record.estado == 'Finalizado'">
+                        <field name="imagen_local" widget="image" class="imagen_local"/>                      
+                        <field name="goles_local"/> - <field name="goles_visitante"/>                
+                        <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                      </div>
+                      <div class="partido" t-else="">
+                        <field name="imagen_local" widget="image" class="imagen_local"/>
+                          VS                
+                        <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                      </div>
+                    </div>
+                    <div>
+                      Arbitro principal: <field name="arbitro_principal"/>
                     </div>
                   </div>
                 </t>

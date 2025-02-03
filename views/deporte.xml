@@ -6,7 +6,7 @@
       <field name="arch" type="xml">
           <tree>
               <field name="id_deporte"/>
-              <field name="nombre"/>
+              <field name="name"/>
           </tree>
       </field>
     </record>
@@ -22,7 +22,7 @@
                         <field name="id_deporte"/>
                       </group>
                       <group name="group_right">
-                        <field name="nombre"/>
+                        <field name="name"/>
                       </group>
                     </group>
                 </sheet>

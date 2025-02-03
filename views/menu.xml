@@ -75,17 +75,28 @@
                         sequence="1"
                         action= "player_action_window"/>
 
-                <menuitem id="menu_status"
+                <!--menuitem id="menu_status"
                         name="Estado"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "status_action_window"/>
+                        action= "action_restart_odoo"/>
 
-                <menuitem id="menu_status"
+                <menuitem id="menu_restart"
                         name="Posicion"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "position_action_window"/>
+                        action= "action_update_practica"/-->
+                <!--menuitem id="menu_reset_odoo"
+                    name="Reiniciar Odoo "
+                    action="action_restart_odoo"
+                    sequence="8"
+                    parent="menu_trabajo_final_root"/>
+
+                <menuitem id="menu_update_practica"
+                    name="Actualizar practica"
+                    action="action_update_practica"
+                    sequence="9"
+                    parent="menu_trabajo_final_root"/-->
                         
                 <!--<menuitem id="menu_division"
                         name="Division"

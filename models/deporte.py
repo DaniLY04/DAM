@@ -5,7 +5,7 @@ class deporte(models.Model):
     _description = 'trabajo_final.deporte'
 
     id_deporte = fields.Integer(string = "id", required="true")
-    nombre = fields.Char(string="Nombre")
+    name = fields.Char(string="Nombre")
     
     @api.model
     def create(self, vals):

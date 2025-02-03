@@ -11,7 +11,7 @@ class partido(models.Model):
     imagen_visitante = fields.Binary(related="equipo_visitante.image")
     goles_local = fields.Integer(string = "Goles local", required= "true")
     goles_visitante = fields.Integer(string = "Goles visitante", required= "true")
-    estado = fields.Selection([("pendiente", "Pendiente"),
+    estado = fields.Selection([("Pendiente", "Pendiente"),
                                 ("En curso", "En curso"),
                                 ("Finalizado", "Finalizado")], string= "estado", required="true")
     competicion = fields.Many2one("trabajo_final.competicion", string= "competicion", required="true")#fields.Char(string="Competicion")#

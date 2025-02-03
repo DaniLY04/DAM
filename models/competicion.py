@@ -5,7 +5,7 @@ class competicion(models.Model):
     _description = 'trabajo_final.competicion'
 
     id_competicion = fields.Char(string = "id", readonly = True)
-    nombre = fields.Char(string="Nombre")
+    name = fields.Char(string="Nombre")
     pais = fields.Char(string="Pais")
     deporte = fields.Char(string="Deporte")#fields.Many2one("trabajo_final.deporte", string="Deportes", required="true")
     categoria = fields.Char(string="Categoria")#fields.Many2one("trabajo_final.categoria", string="Categoria", required="true")
