@@ -48,10 +48,16 @@
               </group-->
               <templates>
                 <t t-name="kanban-box">
-                  <div class= "mt-2" style="width: 1600px; height: 100px;">
+                  <div class= "mt-2" style="width: auto; height: auto;">
                     <field name="equipo_local" style="margin-right: 20px;"/>
                     <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
                     <field name="equipo_visitante"/>
+                    <div class="oe_kanban_team_imagen">
+                      
+                      <field name="imagen_local" widget="image" class="imagen_local"/>
+                      VS                     
+                      <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                    </div>
                   </div>
                 </t>
               </templates>
