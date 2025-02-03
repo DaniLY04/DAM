@@ -9,7 +9,9 @@
               <field name="name"/>
               <field name="last_name"/>
               <field name="gender"/>
-              <field name="image" widget="image" class="mi_imagen_tree"/>
+              <field name="team_id"/>
+              <field name="status_id"/>
+              <field name="position_id"/>
           </tree>
       </field>
     </record>
@@ -22,10 +24,13 @@
                 <sheet>
                     <group name="group_top">
                       <group name="group_left">
-                        <field name="id_player"/>
+                        <field name="id_player" widget="badge"/>
                         <field name="name"/>
                         <field name="last_name"/>
                         <field name="gender" widget="radio"/>
+                        <field name="team_id"/>
+                        <field name="status_id"/>
+                        <field name="position_id"/>
                       </group>
                       <group name="group_right">
                         <field name="image" widget="image"/>

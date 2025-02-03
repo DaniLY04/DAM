@@ -16,6 +16,10 @@ class Player(models.Model):
 
     image = fields.Binary(string="Foto")
 
+    team_id = fields.Many2one('trabajo_final.team',string="Equipo")
+    status_id = fields.Many2one('trabajo_final.status',string="Estado", ondelete="set null")
+    position_id = fields.Many2one('trabajo_final.position',string="Posicion", ondelete="set null")
+
     @api.model
     def create(self, vals):
         if 'id_player' not in vals or not vals['id_player']:
