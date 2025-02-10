@@ -42,6 +42,20 @@
             </field>
         </record>
 
+         <record model="ir.actions.act_window" id="deporte_action_window">
+            <field name="name">Deporte</field>
+            <field name="res_model">trabajo_final.deporte</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Deporte
+                </p>
+                <p>
+                    Click 'Nuevo' para añadir nuevos deportes.
+                </p>
+            </field>
+        </record>
+
         <menuitem id="menu_trabajo_final_root"
                     name="Trabajo Final"
                     sequence="1"/>
@@ -75,26 +89,17 @@
                         sequence="1"
                         action= "player_action_window"/>
 
-<<<<<<< HEAD
-                <!--menuitem id="menu_status"
-                        name="Estado"
-=======
                 <menuitem id="menu_status"
                         name="Estatus"
->>>>>>> 683b4d5279fb58354dbffea31b5f6b66b2288b34
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "action_restart_odoo"/>
+                        action= "status_action_window"/>
 
-<<<<<<< HEAD
-                <menuitem id="menu_restart"
-=======
                 <menuitem id="menu_position"
->>>>>>> 683b4d5279fb58354dbffea31b5f6b66b2288b34
                         name="Posicion"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "action_update_practica"/-->
+                        action= "position_action_window"/>
                 <!--menuitem id="menu_reset_odoo"
                     name="Reiniciar Odoo "
                     action="action_restart_odoo"
@@ -111,11 +116,11 @@
                         name="Division"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "division_action_window"/>
+                        action= "division_action_window"/>-->
                 <menuitem id="menu_deporte"
                         name="Deporte"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "deporte_action_window"/>-->
+                        action= "deporte_action_window"/>
     </data>
 </odoo>

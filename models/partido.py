@@ -1,4 +1,7 @@
 from odoo import models, fields, api
+from odoo.exceptions import ValidationError
+
+from datetime import timedelta
 
 class partido(models.Model):
     _name = 'trabajo_final.partido'
@@ -13,10 +16,10 @@ class partido(models.Model):
     goles_visitante = fields.Integer(string = "Goles visitante", required= "true")
     estado = fields.Selection([("Pendiente", "Pendiente"),
                                 ("En curso", "En curso"),
-                                ("Finalizado", "Finalizado")], string= "estado", required="true")
+                                ("Finalizado", "Finalizado")], string= "estado")
     competicion = fields.Many2one("trabajo_final.competicion", string= "competicion", required="true")#fields.Char(string="Competicion")#
     fecha_hora = fields.Datetime(string="Fecha y Hora")
-    arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal")
+    arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = "true")
 
     @api.constrains('equipo_local', 'equipo_visitante', 'competicion', 'arbitro_principal')
     def _comprobar_datos(self):
@@ -45,3 +48,29 @@ class partido(models.Model):
         if self.equipo_visitante:
             return self.equipo_visitante.image
         return False
+    
+    @api.onchange('fecha_hora')
+    def _actualizar_fecha_hora(self):
+        if not self.fecha_hora:
+            self.estado = "Pendiente"
+        elif self.fecha_hora > fields.Datetime.now():
+            self.estado = "Pendiente"
+        else:
+            tiempo_transcurrido = fields.Datetime.now() - self.fecha_hora
+            if tiempo_transcurrido <= timedelta(minutes=105):
+                self.estado = "En curso"
+            else:
+                self.estado = "Finalizado"
+    
+    @api.constrains('goles_local', 'goles_visitante')
+    def _check_goles(self):
+        for record in self:
+            if record.goles_local < 0 or record.goles_visitante < 0:
+                raise ValidationError("El número de goles no puede ser negativo.")
+
+    @api.constrains('equipo_local', 'equipo_visitante')
+    def _check_equipo_repetido(self):
+        for record in self:
+            if record.equipo_local == record.equipo_visitante:
+                raise ValidationError("Un equipo no puede ser local y visitante al mismo tiempo.")
+

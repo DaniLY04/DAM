@@ -4,7 +4,7 @@ class deporte(models.Model):
     _name = 'trabajo_final.deporte'
     _description = 'trabajo_final.deporte'
 
-    id_deporte = fields.Integer(string = "id", required="true")
+    id_deporte = fields.Char(string = "id", readonly= True)
     name = fields.Char(string="Nombre")
     
     @api.model
