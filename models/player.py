@@ -16,7 +16,7 @@ class Player(models.Model):
 
     image = fields.Binary(string="Foto")
 
-    team_id = fields.Many2one('trabajo_final.team',string="Equipo")
+    team_sport_division_id = fields.Many2one('trabajo_final.team_sport_division',string="Equipo")
     status_id = fields.Many2many('trabajo_final.status',string="Estado")
     position_id = fields.Many2one('trabajo_final.position',string="Posicion", ondelete="set null")
 
@@ -26,9 +26,9 @@ class Player(models.Model):
             vals['id_player'] = self.env['ir.sequence'].next_by_code('increment_idplayer_sequence')
         return super(Player, self).create(vals)
     
-    @api.onchange('team_id')
+    @api.onchange('team_sport_division_id')
     def _onchange_team_id(self):
-        if self.team_id and self.team_id.name == 'Sin Equipo':
+        if self.team_sport_division_id and self.team_sport_division_id.name == 'Sin Equipo':
             return {
                 'domain': {
                     'status_id': [('name', 'like', ['Jubilado', 'Libre','Lesionado','Dudoso'])]

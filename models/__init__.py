@@ -1,1 +1,1 @@
-from . import models, partido, team, arbitro,  competicion, deporte, player, status, position#, restart
+from . import models, partido, team, arbitro,  competicion, deporte, player, status, position, division, team_sport_division, trainer

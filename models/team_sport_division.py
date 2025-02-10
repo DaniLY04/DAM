@@ -6,15 +6,15 @@ class Team_Sport_Division(models.Model):
     _description = 'Equipos Deporte Categoria'
 
     name = fields.Char(string="Nombre", required = True)
-    id = fields.Char(string="ID", readonly=True)
+    id_tsd = fields.Char(string="ID")
     id_sport = fields.Many2one('trabajo_final.deporte',string="Deporte")
-    id_team = fields.Many2one('trabajo_final.tem',string="Equipo Padre")
+    id_team = fields.Many2one('trabajo_final.team',string="Equipo Padre")
     id_division = fields.Many2one('trabajo_final.division', string="Categoria")
     id_trainer = fields.Many2one('trabajo_final.trainer',string="Entrenador")
-    jugadores = fields.One2Many('trabajo_final.player',string="Jugadores")
+    jugadores = fields.One2many('trabajo_final.player','team_sport_division_id',string="Jugadores")
 
     @api.model
     def create(self, vals):
-        if 'id' not in vals or not vals['id']:
-            vals['id'] = self.env['ir.sequence'].next_by_code('increment_idTDS_sequence')
+        if 'id_tsd' not in vals or not vals['id_tsd']:
+            vals['id_tsd'] = self.env['ir.sequence'].next_by_code('increment_idTDS_sequence')
         return super(Team_Sport_Division, self).create(vals)

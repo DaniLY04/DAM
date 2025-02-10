@@ -82,6 +82,11 @@
                         parent="menu_trabajo_final_root"
                         sequence="1"
                         action= "team_action_window"/>
+                <menuitem id="menu_team_sport_division"
+                        name="Equipo DD"
+                        parent="menu_trabajo_final_root"
+                        sequence="1"
+                        action= "team_sport_division_action_window"/>
 
                 <menuitem id="menu_player"
                         name="Jugador"
@@ -99,19 +104,7 @@
                         name="Posicion"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "position_action_window"/>
-                <!--menuitem id="menu_reset_odoo"
-                    name="Reiniciar Odoo "
-                    action="action_restart_odoo"
-                    sequence="8"
-                    parent="menu_trabajo_final_root"/>
-
-                <menuitem id="menu_update_practica"
-                    name="Actualizar practica"
-                    action="action_update_practica"
-                    sequence="9"
-                    parent="menu_trabajo_final_root"/-->
-                        
+                        action= "position_action_window"/>                        
                 <!--<menuitem id="menu_division"
                         name="Division"
                         parent="menu_trabajo_final_root"

@@ -1,0 +1,64 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_team_sport_division_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.team_sport_division.tree</field>
+      <field name="model">trabajo_final.team_sport_division</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_tsd"/>
+              <field name="name"/>
+              <field name="id_sport"/>
+              <field name="id_team"/>
+              <field name="id_division"/>
+              <field name="id_trainer"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_team_sport_division_form" model="ir.ui.view">
+        <field name="name">trabajo_final.team_sport_division.form</field>
+        <field name="model">trabajo_final.team_sport_division</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_tsd" widget="badge"/>
+                        <field name="name"/>
+                        <field name="id_team"/>
+                      </group>
+                    </group>
+                    <group name="group_bottom">
+                      <group name="group_rigth">
+                        <field name="id_division"/>
+                        <field name="id_trainer"/>
+                        <field name="id_sport"/>
+                        <field name="jugadores">
+                          <tree editable="bottom">
+                            <field name="name"/>
+                            <field name="position_id"/>
+                            <field name="status_id"/>
+                            <field name="gender"/>
+                          </tree>
+                        </field>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="team_sport_division_action_window">
+      <field name="name">Equipo Deporte Categoria</field>
+      <field name="res_model">trabajo_final.team_sport_division</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Equipo Deporte Categoria
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos equipos de un deporte para una categoria.
+          </p>
+      </field>
+    </record>
+  </data>
+</odoo>
