@@ -12,7 +12,7 @@ class Team_Sport_Division(models.Model):
     id_division = fields.Many2one('trabajo_final.division', string="Categoria")
     id_trainer = fields.Many2one('trabajo_final.trainer',string="Entrenador")
     jugadores = fields.One2many('trabajo_final.player','team_sport_division_id',string="Jugadores")
-
+    image = fields.Binary(related="id_team.image", string="Escudo")
     @api.model
     def create(self, vals):
         if 'id_tsd' not in vals or not vals['id_tsd']:

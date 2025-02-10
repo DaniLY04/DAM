@@ -24,12 +24,13 @@
                     <group name="group_top">
                       <group name="group_left">
                         <field name="id_tsd" widget="badge"/>
+                        <field name="image" widget="image" class="mi_imagen_tree"/>
                         <field name="name"/>
                         <field name="id_team"/>
                       </group>
                     </group>
                     <group name="group_bottom">
-                      <group name="group_rigth">
+                      <group name="group_right">
                         <field name="id_division"/>
                         <field name="id_trainer"/>
                         <field name="id_sport"/>
@@ -37,7 +38,7 @@
                           <tree editable="bottom">
                             <field name="name"/>
                             <field name="position_id"/>
-                            <field name="status_id"/>
+                            <field name="status_id" widget="many2many_tags"/>
                             <field name="gender"/>
                           </tree>
                         </field>
