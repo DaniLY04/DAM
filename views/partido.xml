@@ -48,10 +48,8 @@
               </group-->
               <templates>
                 <t t-name="kanban-box">
-                  <div>
-                    Competicion: <field name="competicion"/>
-                  </div>
                   <div class= "mt-2" style="width: auto; height: auto;">
+                    Competicion: <field name="competicion"/><br/>
                     <field name="equipo_local" style="margin-right: 20px;"/>
                     <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
                     <field name="equipo_visitante"/>

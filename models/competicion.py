@@ -7,9 +7,9 @@ class competicion(models.Model):
     id_competicion = fields.Char(string = "id", readonly = True)
     name = fields.Char(string="Nombre")
     pais = fields.Char(string="Pais")
-    deporte = fields.Char(string="Deporte")#fields.Many2one("trabajo_final.deporte", string="Deportes", required="true")
+    deporte = fields.Many2one("trabajo_final.deporte", string="Deporte", required="true")
     categoria = fields.Char(string="Categoria")#fields.Many2one("trabajo_final.categoria", string="Categoria", required="true")
-    listado_de_equipos = fields.Char(string="Equipos")#fields.Many2one("trabajo_final.equipo", string="Equipos", required="true")
+    listado_de_equipos = fields.Many2many("trabajo_final.team", string="Equipos", ondelete="cascade", required="true")
 
     @api.model
     def create(self, vals):

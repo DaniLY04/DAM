@@ -23,7 +23,7 @@
                                 <field name="image" widget="image"/>
                             </group>
                             <group name="group_left">
-                                    <field name="id_club"/>
+                                    <field name="id_club" widget="badge"/>
                                     <field name="name"/>
                                     <field name="president"/>
                                     <field name="country"/>

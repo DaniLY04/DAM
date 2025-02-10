@@ -19,13 +19,23 @@
                 <sheet>
                     <group name="group_top">
                       <group name="group_left">
-                        <field name="name" widget="oe_title"/>
+                        <field name="id_competicion"/>
                         <field name="pais"/>
                         <field name="categoria"/>
                       </group>
                       <group name="group_right">
-                        <field name="id_competicion"/>
+                        <field name="name" widget="oe_title"/>
+                        <field name="deporte"/>
                       </group>
+                    </group>
+                    <group name="group_bottom">
+                        <field name="listado_de_equipos">
+                            <!--tree editable="bottom">
+                              <field name="name"/>
+                              <field name="president"/>
+                              <field name="country"/>
+                            </tree-->
+                        </field>
                     </group>
                 </sheet>
             </form>

@@ -1,0 +1,50 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_trainer_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.trainer.tree</field>
+      <field name="model">trabajo_final.trainer</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_trainer"/>
+              <field name="name"/>
+              <field name="last_name"/>
+              <field name="id_team"/>
+              <field name="age"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_trainer_form" model="ir.ui.view">
+        <field name="name">trabajo_final.trainer.form</field>
+        <field name="model">trabajo_final.trainer</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_trainer" widget="badge"/>
+                        <field name="name"/>
+                        <field name="last_name"/>
+                        <field name="id_team"/>
+                        <field name="age"/>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="trainer_action_window">
+      <field name="name">Entrenador</field>
+      <field name="res_model">trabajo_final.trainer</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Estado
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos Entrenadores.
+          </p>
+      </field>
+    </record>
+  </data>
+</odoo>
