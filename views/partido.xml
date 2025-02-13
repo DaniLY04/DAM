@@ -38,14 +38,11 @@
             </form>
         </field>
     </record>
-    <record id="view_pokemon_pokemon_kanban" model="ir.ui.view">
+    <record id="view_trabajo_final_partido_kanban" model="ir.ui.view">
         <field name="name">trabajo_final.partido.kanban</field>
         <field name="model">trabajo_final.partido</field>
         <field name="arch" type="xml">
           <kanban>
-              <!--group>
-                  <kanban_group_by field="type1"/>
-              </group-->
               <templates>
                 <t t-name="kanban-box">
                   <div class= "mt-2" style="width: auto; height: auto;">

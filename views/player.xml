@@ -42,7 +42,7 @@
     <record model="ir.actions.act_window" id="player_action_window">
       <field name="name">Player</field>
       <field name="res_model">trabajo_final.player</field>
-      <field name="view_mode">tree,form</field>
+      <field name="view_mode">kanban,form,tree</field>
       <field name="help" type="html">
           <p class="oe_view_nocontent_create">
               Jugador
@@ -51,6 +51,26 @@
               Click 'Crear' para añadir nuevos Jugadores.
           </p>
       </field>
+    </record>
+    <record id="view_trabajo_final_player_kanban" model="ir.ui.view">
+        <field name="name">trabajo_final.player.kanban</field>
+        <field name="model">trabajo_final.player</field>
+        <field name="arch" type="xml">
+          <kanban>
+            <templates>
+              <t t-name="kanban-box">
+                <div class= "mt-2" style="width: auto; height: auto;">
+                  <field name="image" widget="image" class="imagen_local"/><br/>
+                  Nombre: <field name="name"/> <field name="last_name"/><br/>
+                  Genero: <field name="gender"/><br/>
+                  Posicion: <field name="position_name"/><br/>
+                  Estado: <field name="status_name"/><br/>
+                  Division: <field name="division_name"/><br/>
+                </div>
+              </t>
+            </templates>
+          </kanban>
+          </field>
     </record>
   </data>
 </odoo>

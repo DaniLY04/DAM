@@ -27,8 +27,11 @@
         'data/sequences.xml',
         #'security/ir.model.access.csv',
         #'views/views.xml','
+<<<<<<< HEAD
         #'views/restart.xml',
         'views/division.xml',
+=======
+>>>>>>> f8fa85e5ed725d3ac02e7d4195547e6aab65c45b
         'views/trainer.xml',
         'views/team_sport_division.xml',
         'views/status.xml',
