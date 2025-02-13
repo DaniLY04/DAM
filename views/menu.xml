@@ -105,11 +105,11 @@
                         parent="menu_trabajo_final_root"
                         sequence="1"
                         action= "position_action_window"/>                        
-                <!--<menuitem id="menu_division"
+                <menuitem id="menu_division"
                         name="Division"
                         parent="menu_trabajo_final_root"
                         sequence="1"
-                        action= "division_action_window"/>-->
+                        action= "division_action_window"/>
                 <menuitem id="menu_deporte"
                         name="Deporte"
                         parent="menu_trabajo_final_root"

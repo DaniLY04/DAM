@@ -1,0 +1,46 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_division_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.division.tree</field>
+      <field name="model">trabajo_final.division</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_division"/>
+              <field name="name"/>
+              <field name="gender"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_division_form" model="ir.ui.view">
+        <field name="name">trabajo_final.division.form</field>
+        <field name="model">trabajo_final.division</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_division" widget="badge"/>
+                        <field name="name"/>
+                        <field name="gender" widget="Radio"/>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <record model="ir.actions.act_window" id="division_action_window">
+      <field name="name">Estado</field>
+      <field name="res_model">trabajo_final.division</field>
+      <field name="view_mode">tree,form</field>
+      <field name="help" type="html">
+          <p class="oe_view_nocontent_create">
+              Estado
+          </p>
+          <p>
+              Click 'Crear' para añadir nuevos estados de los jugadores.
+          </p>
+      </field>
+    </record>
+  </data>
+</odoo>

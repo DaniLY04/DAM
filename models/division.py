@@ -7,6 +7,10 @@ class Division(models.Model):
 
     name = fields.Char(string="Nombre : ", requiered=True)
     id_division = fields.Char(string="ID :" , required=True)
+    gender = fields.Selection([
+        ('first','Masculino'),
+        ('second','Femenino')
+    ], string="Genero", required = True)
 
     @api.model
     def create(self, vals):
