@@ -6,7 +6,7 @@ class arbitro(models.Model):
     _name = 'trabajo_final.arbitro'
     _description = 'arbitro'
 
-    id_arbitro = fields.Char(string = "id", readonly = True)
+    id_arbitro = fields.Char(string = "ID ", readonly = True)
     name = fields.Char(string= "nombre", required = "true")
     deporte = fields.Many2one(comodel_name="trabajo_final.deporte", string="Deporte", required = "true")
    
