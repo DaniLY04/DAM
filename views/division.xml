@@ -1,0 +1,33 @@
+<odoo>
+  <data>
+    <record id="trabajo_final_division_tree" model="ir.ui.view">
+      <field name="name">trabajo_final.division.tree</field>
+      <field name="model">trabajo_final.division</field>
+      <field name="arch" type="xml">
+          <tree>
+              <field name="id_division"/>
+              <field name="name"/>
+          </tree>
+      </field>
+    </record>
+
+    <record id="trabajo_final_partido_form" model="ir.ui.view">
+        <field name="name">trabajo_final.division.form</field>
+        <field name="model">trabajo_final.division</field>
+        <field name="arch" type="xml">
+            <form>  
+                <sheet>
+                    <group name="group_top">
+                      <group name="group_left">
+                        <field name="id_division"/>  
+                      </group>
+                      <group name="group_right">
+                        <field name="name"/>
+                      </group>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+  </data>
+</odoo>

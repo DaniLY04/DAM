@@ -27,7 +27,6 @@
         'data/sequences.xml',
         #'security/ir.model.access.csv',
         #'views/views.xml','
-        #'views/restart.xml',
         'views/trainer.xml',
         'views/team_sport_division.xml',
         'views/status.xml',
