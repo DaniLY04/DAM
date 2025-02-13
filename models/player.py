@@ -19,6 +19,9 @@ class Player(models.Model):
     team_sport_division_id = fields.Many2one('trabajo_final.team_sport_division',string="Equipo")
     status_id = fields.Many2many('trabajo_final.status',string="Estado")
     position_id = fields.Many2one('trabajo_final.position',string="Posicion", ondelete="set null")
+    division_name = fields.Char(related="team_sport_division_id.name")
+    status_name = fields.Char(related="status_id.name")    
+    position_name = fields.Char(related="position_id.name")
 
     @api.model
     def create(self, vals):
