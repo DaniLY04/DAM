@@ -8,9 +8,9 @@ class partido(models.Model):
     _description = 'trabajo_final.partido'
 
     id_partido = fields.Char(string = "id", readonly = True)
-    equipo_local = fields.Many2one("trabajo_final.team", string= "equipo local")
+    equipo_local = fields.Many2one("trabajo_final.team_sport_division", string= "equipo local")
     imagen_local = fields.Binary(related="equipo_local.image")
-    equipo_visitante = fields.Many2one("trabajo_final.team", string= "equipo visitante")
+    equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "equipo visitante")
     imagen_visitante = fields.Binary(related="equipo_visitante.image")
     goles_local = fields.Integer(string = "Goles local", required= "true")
     goles_visitante = fields.Integer(string = "Goles visitante", required= "true")
