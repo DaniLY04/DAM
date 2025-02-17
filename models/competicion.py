@@ -8,7 +8,6 @@ class competicion(models.Model):
     id_competicion = fields.Char(string = "id", readonly = True)
     name = fields.Char(string="Nombre")
     pais = fields.Char(string="Pais")
-    deporte = fields.Many2one("trabajo_final.deporte", string="Deporte", required="true")
     categoria = fields.Many2one("trabajo_final.division", string="Categoria", required="true")
     listado_de_equipos = fields.Many2many("trabajo_final.team_sport_division", string="Equipos", ondelete="cascade", required="true")
 
@@ -26,3 +25,8 @@ class competicion(models.Model):
             equipos_ids = [equipo.id for equipo in record.listado_de_equipos]
             if len(equipos_ids) != len(set(equipos_ids)):
                 raise ValidationError("No puede haber equipos duplicados en la competición.")
+
+    @api.onchange ('categoria')
+    def _onchange_categoria(self):
+        if self.categoria:
+            return {'domain': {'listado_de_equipos':[('id_division', "=", self.categoria.id)]}}

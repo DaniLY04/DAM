@@ -22,7 +22,7 @@
                             <group name="group_rigth">
                                 <field name="image" widget="image"/>
                             </group>
-                            <group name="group_left">
+                            <group name="group_left" string="Información del Club" class="oe_list_header">
                                     <field name="id_club" widget="badge"/>
                                     <field name="name"/>
                                     <field name="president"/>

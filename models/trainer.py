@@ -8,7 +8,7 @@ class Trainer(models.Model):
     last_name = fields.Char(string="Apellidos",required=True)
     age = fields.Integer(string="Edad")
     id_trainer = fields.Char(string="ID",readonly=True)
-    id_team = fields.Many2one('trabajo_final.team_sport_division',string="Equipo",required=True)
+    id_team = fields.Many2one('trabajo_final.team_sport_division',string="Equipo")
     
     @api.model
     def create(self, vals):

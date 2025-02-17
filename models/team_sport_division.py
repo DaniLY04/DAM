@@ -18,3 +18,8 @@ class Team_Sport_Division(models.Model):
         if 'id_tsd' not in vals or not vals['id_tsd']:
             vals['id_tsd'] = self.env['ir.sequence'].next_by_code('increment_idTDS_sequence')
         return super(Team_Sport_Division, self).create(vals)
+
+    @api.onchange('id_division')
+    def on_change_division(self):
+        if self.id_division:
+            self.id_sport = self.id_division.id_sport

@@ -7,6 +7,7 @@
           <tree>
               <field name="id_division"/>
               <field name="name"/>
+              <field name="id_sport"/>
               <field name="gender"/>
           </tree>
       </field>
@@ -22,6 +23,7 @@
                       <group name="group_left">
                         <field name="id_division" widget="badge"/>
                         <field name="name"/>
+                        <field name="id_sport"/>
                         <field name="gender" widget="Radio"/>
                       </group>
                     </group>
