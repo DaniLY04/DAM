@@ -9,15 +9,15 @@ class partido(models.Model):
 
     id_partido = fields.Char(string = "id", readonly = True)
     equipo_local = fields.Many2one("trabajo_final.team_sport_division", string= "equipo local")
-    imagen_local = fields.Binary(related="equipo_local.image")
+    imagen_local = fields.Binary(related="equipo_local.id_team.image")
     equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "equipo visitante")
-    imagen_visitante = fields.Binary(related="equipo_visitante.image")
+    imagen_visitante = fields.Binary(related="equipo_visitante.id_team.image")
     goles_local = fields.Integer(string = "Goles local", required= "true")
     goles_visitante = fields.Integer(string = "Goles visitante", required= "true")
     estado = fields.Selection([("Pendiente", "Pendiente"),
                                 ("En curso", "En curso"),
                                 ("Finalizado", "Finalizado")], string= "estado")
-    competicion = fields.Many2one("trabajo_final.competicion", string= "competicion", required="true")#fields.Char(string="Competicion")#
+    competicion = fields.Many2one("trabajo_final.division", string= "competicion", required="true")
     fecha_hora = fields.Datetime(string="Fecha y Hora")
     arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = "true")
 
