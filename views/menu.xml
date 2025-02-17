@@ -17,7 +17,7 @@
         <record model="ir.actions.act_window" id="partido_action_window">
             <field name="name">Partido</field>
             <field name="res_model">trabajo_final.partido</field>
-            <field name="view_mode">kanban,form</field>
+            <field name="view_mode">kanban,tree,form</field>
             <field name="help" type="html">
                 <p class="oe_view_nocontent_create">
                     Partido
@@ -70,6 +70,12 @@
                         parent="menu_trabajo_final_root"
                         sequence="1"
                         action= "partido_action_window"/>
+
+                <menuitem id="menu_trainer"
+                        name="Entrenador"
+                        parent="menu_trabajo_final_root"
+                        sequence="1"
+                        action= "trainer_action_window"/>
 
                 <menuitem id="menu_competicion"
                         name="Competicion"

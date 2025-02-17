@@ -7,17 +7,16 @@ class partido(models.Model):
     _name = 'trabajo_final.partido'
     _description = 'trabajo_final.partido'
 
-    id_partido = fields.Char(string = "id", readonly = True)
-    equipo_local = fields.Many2one("trabajo_final.team_sport_division", string= "equipo local")
+    id_partido = fields.Char(string = "Id", readonly = True)
+    equipo_local = fields.Many2one("trabajo_final.team_sport_division", string= "Equipo local")
     imagen_local = fields.Binary(related="equipo_local.id_team.image")
-    equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "equipo visitante")
+    equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "Equipo visitante")
     imagen_visitante = fields.Binary(related="equipo_visitante.id_team.image")
-    goles_local = fields.Integer(string = "Goles local", required= "true")
-    goles_visitante = fields.Integer(string = "Goles visitante", required= "true")
+    resultado = fields.Char(string = "Resultado", required= "true")
     estado = fields.Selection([("Pendiente", "Pendiente"),
                                 ("En curso", "En curso"),
-                                ("Finalizado", "Finalizado")], string= "estado")
-    competicion = fields.Many2one("trabajo_final.division", string= "competicion", required="true")
+                                ("Finalizado", "Finalizado")], string= "Estado")
+    competicion = fields.Many2one("trabajo_final.competicion", string= "Competicion", required="true")
     fecha_hora = fields.Datetime(string="Fecha y Hora")
     arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = "true")
 
@@ -62,12 +61,6 @@ class partido(models.Model):
             else:
                 self.estado = "Finalizado"
     
-    @api.constrains('goles_local', 'goles_visitante')
-    def _check_goles(self):
-        for record in self:
-            if record.goles_local < 0 or record.goles_visitante < 0:
-                raise ValidationError("El número de goles no puede ser negativo.")
-
     @api.constrains('equipo_local', 'equipo_visitante')
     def _check_equipo_repetido(self):
         for record in self:

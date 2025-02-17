@@ -19,19 +19,18 @@
         <field name="arch" type="xml">
             <form>  
                 <sheet>
-                    <group name="group_top">
+                    <group name="group_top" string="Info" class="oe_list_header">
                       <group name="group_left">
                         <field name="id_partido"/>
                         <field name="estado" widget="radio"/>                     
-                        <field name="equipo_local"/>
-                        <field name="goles_local"/>                        
+                        <field name="fecha_hora"/> 
+                        <field name="competicion"/>                      
                         <field name="arbitro_principal"/>  
                       </group>
-                      <group name="group_right">
-                        <field name="fecha_hora"/> 
-                        <field name="competicion"/>                         
+                      <group name="group_right" string="Equipos" class="oe_list_header">
+                        <field name="equipo_local"/>   
                         <field name="equipo_visitante"/>
-                        <field name="goles_visitante"/>
+                        <field name="resultado"/>
                       </group>
                     </group>
                 </sheet>
@@ -46,25 +45,28 @@
               <templates>
                 <t t-name="kanban-box">
                   <div class= "mt-2" style="width: auto; height: auto;">
-                    Competicion: <field name="competicion"/><br/>
-                    <field name="equipo_local" style="margin-right: 20px;"/>
-                    <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
+                    <field name="competicion" class="o_kanban_record_title"/><br/>
+                    <field name="equipo_local"/>
+                      VS
                     <field name="equipo_visitante"/>
                     <div class="oe_kanban_team_imagen">
+                      <br/>
                       <div class="partido" t-if="record.estado == 'En curso' || record.estado == 'Finalizado'">
-                        <field name="imagen_local" widget="image" class="imagen_local"/>                      
-                        <field name="goles_local"/> - <field name="goles_visitante"/>                
-                        <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                        <field name="imagen_local" widget="image" class="mi_imagen_tree"/>                      
+                        <field name="resultado"/>              
+                        <field name="imagen_visitante" widget="image"  class="mi_imagen_tree"/>
                       </div>
                       <div class="partido" t-else="">
-                        <field name="imagen_local" widget="image" class="imagen_local"/>
+                        <field name="imagen_local" widget="image" class="mi_imagen_tree"/>
                           VS                
-                        <field name="imagen_visitante" widget="image"  class="imagen_visitante"/>
+                        <field name="imagen_visitante" widget="image"  class="mi_imagen_tree"/>
                       </div>
+                      <br/>
                     </div>
                     <div>
                       Arbitro principal: <field name="arbitro_principal"/><br/>
-                      Estado: <field name="estado"/>
+                      Estado: <field name="estado"/> <br/>
+                      Fecha:  <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
                     </div>
                   </div>
                 </t>
