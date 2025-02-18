@@ -13,9 +13,7 @@ class partido(models.Model):
     equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "Equipo visitante")
     imagen_visitante = fields.Binary(related="equipo_visitante.id_team.image")
     resultado = fields.Char(string = "Resultado", required= True)
-    estado = fields.Char(string = "Estado", readonly = True, compute = "_actualizar_estado")#Selection([("Pendiente", "Pendiente"),
-                               # ("En curso", "En curso"),
-                               # ("Finalizado", "Finalizado")], string= "Estado")
+    estado = fields.Char(string = "Estado", readonly = True, compute = "_actualizar_estado")
     competicion = fields.Many2one("trabajo_final.competicion", string= "Competicion", required= True)
     fecha_hora = fields.Datetime(string="Fecha y Hora")
     arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = True)
