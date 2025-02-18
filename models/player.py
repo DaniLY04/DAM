@@ -7,7 +7,7 @@ class Player(models.Model):
 
     name = fields.Char(string="Nombre", required = True)
     id_player = fields.Char(string="ID_Jugador", readonly=True)
-    last_name = fields.Char(string ="Apellidos", requiered = True)
+    last_name = fields.Char(string ="Apellidos", required = True)
 
     gender = fields.Selection([
         ('first','Masculino'),
@@ -18,7 +18,7 @@ class Player(models.Model):
 
     team_sport_division_id = fields.Many2one('trabajo_final.team_sport_division',string="Equipo")
     status_id = fields.Many2many('trabajo_final.status',string="Estado")
-    position_id = fields.Many2one('trabajo_final.position',string="Posicion", ondelete="set null")
+    position_id = fields.Many2one('trabajo_final.position',string="Posicion")
     division_name = fields.Char(related="team_sport_division_id.id_division.name")
     status_name = fields.Char(related="status_id.name")    
     position_name = fields.Char(related="position_id.name")

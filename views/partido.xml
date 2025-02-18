@@ -31,6 +31,9 @@
                         <field name="equipo_local"/>   
                         <field name="equipo_visitante"/>
                         <field name="resultado"/>
+                        <xpath expr="//group[@name]" position="inside">
+                          Comentarios del partido: <field name="comentarios"/>
+                        </xpath>
                       </group>
                     </group>
                 </sheet>
@@ -67,6 +70,9 @@
                       Arbitro principal: <field name="arbitro_principal"/><br/>
                       Estado: <field name="estado"/> <br/>
                       Fecha:  <field name="fecha_hora" style="margin-right: 20px; margin-top: 10px;"/>
+                      <xpath expr="//group[@name]" position="inside">
+                        Comentarios del partido: <field name="comentarios"/>
+                      </xpath>
                     </div>
                   </div>
                 </t>

@@ -5,7 +5,7 @@ class Division(models.Model):
     _name = 'trabajo_final.division'
     _description = 'Categoria'
 
-    name = fields.Char(string="Nombre : ", requiered=True)
+    name = fields.Char(string="Nombre : ", required=True)
     id_division = fields.Char(string="ID :")
     gender = fields.Selection([
         ('first','Masculino'),
