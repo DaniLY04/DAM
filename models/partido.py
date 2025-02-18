@@ -12,15 +12,15 @@ class partido(models.Model):
     imagen_local = fields.Binary(related="equipo_local.id_team.image")
     equipo_visitante = fields.Many2one("trabajo_final.team_sport_division", string= "Equipo visitante")
     imagen_visitante = fields.Binary(related="equipo_visitante.id_team.image")
-    resultado = fields.Char(string = "Resultado", required= "true")
-    estado = fields.Char(string = "Estado", readonly = True)#Selection([("Pendiente", "Pendiente"),
+    resultado = fields.Char(string = "Resultado", required= True)
+    estado = fields.Char(string = "Estado", readonly = True, compute = "_actualizar_estado")#Selection([("Pendiente", "Pendiente"),
                                # ("En curso", "En curso"),
                                # ("Finalizado", "Finalizado")], string= "Estado")
-    competicion = fields.Many2one("trabajo_final.competicion", string= "Competicion", required="true")
+    competicion = fields.Many2one("trabajo_final.competicion", string= "Competicion", required= True)
     fecha_hora = fields.Datetime(string="Fecha y Hora")
-    arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = "true")
+    arbitro_principal = fields.Many2one("trabajo_final.arbitro", string = "Arbitro principal", required = True)
     #campo xpath
-    comentarios = fields.Text(string="Comentarios del partido")
+    comentario = fields.Text(string="Comentarios del partido")
 
     @api.constrains('equipo_local', 'equipo_visitante', 'competicion', 'arbitro_principal')
     def _comprobar_datos(self):
@@ -50,18 +50,19 @@ class partido(models.Model):
             return self.equipo_visitante.image
         return False
     
-    @api.onchange('fecha_hora')
-    def _actualizar_fecha_hora(self):
-        if not self.fecha_hora:
-            self.estado = "Pendiente"
-        elif self.fecha_hora > fields.Datetime.now():
-            self.estado = "Pendiente"
-        else:
-            tiempo_transcurrido = fields.Datetime.now() - self.fecha_hora
-            if tiempo_transcurrido <= timedelta(minutes=105):
-                self.estado = "En curso"
+    @api.depends('fecha_hora')
+    def _actualizar_estado(self):
+        for record in self:
+            if not record.fecha_hora:
+                record.estado = "Pendiente"
+            elif record.fecha_hora > fields.Datetime.now():
+                record.estado = "Pendiente"
             else:
-                self.estado = "Finalizado"
+                tiempo_transcurrido = fields.Datetime.now() - record.fecha_hora
+                if tiempo_transcurrido <= timedelta(minutes=105):
+                    record.estado = "En curso"
+                else:
+                    record.estado = "Finalizado"
     
     @api.constrains('equipo_local', 'equipo_visitante')
     def _check_equipo_repetido(self):
@@ -69,3 +70,19 @@ class partido(models.Model):
             if record.equipo_local == record.equipo_visitante:
                 raise ValidationError("Un equipo no puede ser local y visitante al mismo tiempo.")
 
+    @api.onchange('competicion')
+    def _compute_equipos_competicion(self):
+        if self.competicion:
+            return {
+                'domain': {
+                    'equipo_local': [('id', 'in', self.competicion.listado_de_equipos.ids)],
+                    'equipo_visitante': [('id', 'in', self.competicion.listado_de_equipos.ids)]
+                }
+            }
+        else:
+            return {
+                'domain': {
+                    'equipo_local': [],
+                    'equipo_visitante': []
+                }
+            }
